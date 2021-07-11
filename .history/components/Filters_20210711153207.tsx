@@ -10,18 +10,13 @@ const Filters = () => {
     useRecoilState(positionFilterState);
 
   const onFilterPress = (position: string) => {
-    setPositionFilter((curPositionFilter) => {
-      if (curPositionFilter.includes(position)) {
-        //remove filter
-
-        return curPositionFilter.filter((pos) => pos !== position);
-      } else {
-        return [...curPositionFilter, position];
-      }
-    });
+    setPositionFilter((currentPositionFilter) => [
+      ...currentPositionFilter,
+      position,
+    ]);
   };
 
-  const isSelected = (position) => {
+  const isSelected = (position: string) => {
     return positionFilter.includes(position);
   };
 
@@ -30,10 +25,7 @@ const Filters = () => {
       {positions.map((position) => (
         <Pressable
           onPress={() => onFilterPress(position)}
-          style={[
-            styles.filterContainer,
-            { backgroundColor: isSelected(position) ? "purple" : "#ddd" },
-          ]}
+          style={[styles.filterContainer, { backgroundColor: "#ddd" }]}
         >
           <Text style={styles.text}>{position}</Text>
         </Pressable>

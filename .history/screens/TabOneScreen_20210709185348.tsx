@@ -30,7 +30,7 @@ export default function TabOneScreen() {
       <Pressable onPress={viewPlayers} style={styles.buttonContainer}>
         <Text>View Players</Text>
       </Pressable>
-
+      
       <BottomSheet ref={playersBottomSheet} index={0} snapPoints={snapPoints}>
         <Pressable
           onPress={() => filtersBottomSheet.current?.expand()}

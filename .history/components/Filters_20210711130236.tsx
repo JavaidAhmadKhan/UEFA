@@ -9,35 +9,43 @@ const Filters = () => {
   const [positionFilter, setPositionFilter] =
     useRecoilState(positionFilterState);
 
+  console.log(positionFilter);
+
   const onFilterPress = (position: string) => {
-    setPositionFilter((curPositionFilter) => {
-      if (curPositionFilter.includes(position)) {
-        //remove filter
-
-        return curPositionFilter.filter((pos) => pos !== position);
-      } else {
-        return [...curPositionFilter, position];
-      }
-    });
-  };
-
-  const isSelected = (position) => {
-    return positionFilter.includes(position);
+    console.warn(position);
   };
 
   return (
     <View style={styles.container}>
       {positions.map((position) => (
         <Pressable
-          onPress={() => onFilterPress(position)}
-          style={[
-            styles.filterContainer,
-            { backgroundColor: isSelected(position) ? "purple" : "#ddd" },
-          ]}
+          onPress={() => onFilterPress("FWD")}
+          style={styles.filterContainer}
         >
           <Text style={styles.text}>{position}</Text>
         </Pressable>
       ))}
+
+      <Pressable
+        onPress={() => onFilterPress("MID")}
+        style={styles.filterContainer}
+      >
+        <Text style={styles.text}>MID</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => onFilterPress("DEF")}
+        style={styles.filterContainer}
+      >
+        <Text style={styles.text}>DEF</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => onFilterPress("GCK")}
+        style={styles.filterContainer}
+      >
+        <Text style={styles.text}>GCK</Text>
+      </Pressable>
     </View>
   );
 };
@@ -51,6 +59,7 @@ const styles = StyleSheet.create({
   },
 
   filterContainer: {
+    backgroundColor: "#ddd",
     width: 50,
     height: 50,
     borderRadius: 25,

@@ -6,12 +6,14 @@ import {
   Pressable,
   Text,
 } from "react-native";
-import BottomSheet from "@gorhom/bottom-sheet";
+import BottomSheet, { BottomSheetFlatList } from "@gorhom/bottom-sheet";
+
+import { players } from "../assets/data/players";
 
 import Field from "../components/Field";
 import TeamStats from "../components/TeamStats";
+import PlayerListItem from "../components/PlayerListItem";
 import Filters from "../components/Filters";
-import PlayersList from "../components/PlayersList";
 
 export default function TabOneScreen() {
   const playersBottomSheet = useRef<BottomSheet>(null);
@@ -38,7 +40,7 @@ export default function TabOneScreen() {
         >
           <Text>Filters</Text>
         </Pressable>
-        <PlayersList />
+        
       </BottomSheet>
       <BottomSheet ref={filtersBottomSheet} index={0} snapPoints={snapPoints}>
         <Filters />

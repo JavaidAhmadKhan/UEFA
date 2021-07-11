@@ -10,18 +10,19 @@ const Filters = () => {
     useRecoilState(positionFilterState);
 
   const onFilterPress = (position: string) => {
-    setPositionFilter((curPositionFilter) => {
-      if (curPositionFilter.includes(position)) {
+    setPositionFilter((currentPositionFilter) => {
+      if(currentPositionFilter.includes(position)){
         //remove filter
 
-        return curPositionFilter.filter((pos) => pos !== position);
       } else {
-        return [...curPositionFilter, position];
+        return [...currentPositionFilter, position]
       }
+     [ ...currentPositionFilter,]
+      position,
     });
   };
 
-  const isSelected = (position) => {
+  const isSelected = (position: string) => {
     return positionFilter.includes(position);
   };
 

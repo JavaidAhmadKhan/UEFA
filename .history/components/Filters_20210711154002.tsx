@@ -11,13 +11,15 @@ const Filters = () => {
 
   const onFilterPress = (position: string) => {
     setPositionFilter((curPositionFilter) => {
-      if (curPositionFilter.includes(position)) {
+      if(curPositionFilter.includes(position)){
         //remove filter
 
-        return curPositionFilter.filter((pos) => pos !== position);
+        return curPositionFilter.filter((pos) => pos !=== position);
+
       } else {
-        return [...curPositionFilter, position];
+        return [...curPositionFilter, position]
       }
+     
     });
   };
 

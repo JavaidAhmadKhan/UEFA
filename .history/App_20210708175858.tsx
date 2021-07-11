@@ -20,6 +20,7 @@ export default function App() {
         <RecoilRoot>
           <TabOneScreen />
         </RecoilRoot>
+
         <StatusBar />
       </SafeAreaProvider>
     );

@@ -29,6 +29,7 @@ export default function TabOneScreen() {
       <Field />
       <Pressable onPress={viewPlayers} style={styles.buttonContainer}>
         <Text>View Players</Text>
+        <PlayersList />
       </Pressable>
 
       <BottomSheet ref={playersBottomSheet} index={0} snapPoints={snapPoints}>
@@ -38,7 +39,6 @@ export default function TabOneScreen() {
         >
           <Text>Filters</Text>
         </Pressable>
-        <PlayersList />
       </BottomSheet>
       <BottomSheet ref={filtersBottomSheet} index={0} snapPoints={snapPoints}>
         <Filters />

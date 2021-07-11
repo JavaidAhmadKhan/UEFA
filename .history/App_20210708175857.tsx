@@ -17,9 +17,9 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <RecoilRoot>
-          <TabOneScreen />
-        </RecoilRoot>
+        <RecoilRoot><TabOneScreen /></RecoilRoot>
+        
+
         <StatusBar />
       </SafeAreaProvider>
     );
